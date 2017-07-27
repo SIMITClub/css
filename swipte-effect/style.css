@@ -1,0 +1,44 @@
+main article{ 
+    position: absolute; 
+    display: block; 
+    height: 100%; 
+    width: 100%; 
+    padding-top: 1em; 
+    overflow: auto;
+}
+
+main article:target{
+z-index: 999; }
+
+main article > *:last-child{ 
+    position: absolute; 
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 100vw; 
+    z-index: -1; 
+    background: #000; 
+    transition: right 1s;
+}
+
+main article:target > *:last-child{
+    animation: open 1s forwards; 
+}
+
+[data-previous="#c1"], #c1 > span{
+background: #FF6D53; }
+[data-previous="#c2"], #c2 > span{
+background:#FFD377; }
+[data-previous="#c3"], #c3 > span{
+background: #6ECCCC; } /* Good for background*/
+[data-previous="#c4"], #c4 > span{
+    background: #BBFFFF;
+}
+
+nav{
+position: fixed; top: 0;
+width: 100%; z-index: 9999; background: white;
+}
+@keyframes open{
+from{ right: -100vw; } to{ right: 0; } }
